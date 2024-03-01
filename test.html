@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    #container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#randomImage {
+    max-width: 200px;
+    max-height: 200px;
+    border: 2px solid black;
+    border-radius: 20%;
+}
+
+#changeImageBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>
+<body>
+    <div id="container">
+        <img id="randomImage" src="placeholder.jpg" alt="Random Image">
+        <button id="changeImageBtn">Click for a Random Image</button>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const changeImageBtn = document.getElementById("changeImageBtn");
+    const randomImage = document.getElementById("randomImage");
+
+    
+    const imageFiles = [
+        "inverted-dice-1.svg",
+        "inverted-dice-2.svg",
+        "inverted-dice-3.svg",
+        "inverted-dice-4.svg",
+        "inverted-dice-5.svg",
+        "inverted-dice-6.svg"
+        
+
+        
+    ];
+
+    changeImageBtn.addEventListener("click", function() {
+        
+        const randomIndex = Math.floor(Math.random() * imageFiles.length);
+        const randomImageFile = imageFiles[randomIndex];
+
+        
+        randomImage.src = randomImageFile;
+        randomImage.alt = "Random Image";
+    });
+});
+    </script>
+</body>
+</html>
